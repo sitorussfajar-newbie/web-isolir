@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemberitahuan Layanan</title>
+    <title>Pemberitahuan Layanan Internet</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f3f4f6;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
@@ -19,57 +19,145 @@
         .card {
             background-color: white;
             padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            max-width: 400px;
+            max-width: 420px;
             width: 100%;
-            border-top: 5px solid #ef4444;
+            border-top: 6px solid #ef4444;
+        }
+        .icon-wrapper {
+            background-color: #fee2e2;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
         }
         .icon {
-            font-size: 65px;
-            margin-bottom: 10px;
+            font-size: 40px;
         }
         h2 {
             color: #1f2937;
-            margin-bottom: 15px;
+            margin: 0 0 10px 0;
             font-size: 24px;
         }
-        p {
-            color: #4b5563;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        p.subtitle {
+            color: #6b7280;
+            line-height: 1.5;
+            margin-bottom: 25px;
             font-size: 15px;
         }
+        .payment-box {
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .payment-box h3 {
+            margin: 0 0 15px 0;
+            font-size: 15px;
+            color: #475569;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .payment-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .method-icon {
+            font-size: 28px;
+            margin-right: 15px;
+        }
+        .method-details {
+            flex-grow: 1;
+        }
+        .method-name {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 15px;
+        }
+        .method-number {
+            color: #2563eb;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin: 4px 0;
+            user-select: all; /* Memudahkan pelanggan menyalin nomor */
+        }
+        .method-owner {
+            color: #64748b;
+            font-size: 14px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 15px 0;
+        }
         .btn {
-            display: block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             padding: 14px 0;
-            margin-bottom: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
             color: white;
             box-sizing: border-box;
-            transition: opacity 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 16px;
         }
-        .btn:hover { opacity: 0.9; }
-        .btn-pay { background-color: #3b82f6; }
-        .btn-wa { background-color: #10b981; }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        .btn-wa { 
+            background-color: #25D366; 
+        }
+        .btn-icon {
+            margin-right: 8px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <div class="icon">⚠️</div>
-        <h2>Layanan Terisolir</h2>
-        <p>Mohon maaf, koneksi internet Anda saat ini dihentikan sementara waktu karena adanya tagihan yang belum diselesaikan.</p>
+        <div class="icon-wrapper">
+            <div class="icon">📡</div>
+        </div>
+        <h2>Internet Terisolir</h2>
+        <p class="subtitle">Maaf, akses internet Anda saat ini dihentikan sementara karena terdapat tagihan yang belum diselesaikan.</p>
         
-        <!-- Ganti link lynk.id di bawah ini dengan link Anda -->
-        <a href="https://lynk.id/username_anda" class="btn btn-pay">💳 Bayar Tagihan Sekarang</a>
+        <div class="payment-box">
+            <h3>Info Pembayaran</h3>
+            
+            <div class="payment-method">
+                <div class="method-icon">💳</div>
+                <div class="method-details">
+                    <div class="method-name">DANA / ShopeePay</div>
+                    <div class="method-number">085750551495</div>
+                    <div class="method-owner">a.n <strong>Muhammad Rifai</strong></div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div style="font-size: 13px; color: #64748b; text-align: center; line-height: 1.4;">
+                Silakan lakukan transfer ke nomor di atas, lalu klik tombol di bawah ini untuk konfirmasi pengaktifan kembali.
+            </div>
+        </div>
         
-        <!-- Ganti nomor 628... di bawah ini dengan nomor WA Admin -->
-        <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20konfirmasi%20pembayaran%20internet" class="btn btn-wa">💬 Konfirmasi via WhatsApp</a>
+        <a href="https://wa.me/628815492241?text=Halo%20Admin,%20saya%20sudah%20melakukan%20pembayaran%20tagihan%20internet%20via%20DANA/ShopeePay.%20Mohon%20diaktifkan%20kembali." class="btn btn-wa">
+            <span class="btn-icon">💬</span> Konfirmasi Pembayaran
+        </a>
     </div>
 
 </body>
